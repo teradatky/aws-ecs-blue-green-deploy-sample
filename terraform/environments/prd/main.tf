@@ -16,3 +16,12 @@ module "network" {
     ap-northeast-1c = "10.11.12.224/27"
   }
 }
+
+module "ecs" {
+  source     = "../../modules/ecs"
+  name       = "ecs-bg-deploy"
+  env        = "prd"
+  vpc_id     = module.network.vpc_id
+  subnet_ids = module.network.app_subnet_ids
+  allowed_ip = "0.0.0.0/0"
+}

@@ -12,9 +12,8 @@ provider "aws" {
   region = "ap-northeast-1"
   default_tags {
     tags = {
-      owner = "terada"
-      repo  = "aws-ecs-blue-green-deploy-sample"
-      env   = "prd"
+      repo = "aws-ecs-blue-green-deploy-sample"
+      env  = "prd"
     }
   }
 }
