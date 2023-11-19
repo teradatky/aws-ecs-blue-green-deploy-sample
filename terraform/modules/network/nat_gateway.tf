@@ -17,7 +17,7 @@ resource "aws_nat_gateway" "main" {
   subnet_id     = aws_subnet.public[each.key].id
 
   tags = {
-    Name = join("-", [var.env, var.name, "nat-gw", trimprefix(each.key, "ap-northeast-")])
+    Name = join("-", [var.env, var.name, "natgw", trimprefix(each.key, "ap-northeast-")])
   }
 
   depends_on = [aws_internet_gateway.main]
